@@ -1,11 +1,19 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-    type Query {
-        launches: [Launch]!
-        launch(id: ID!): Launch
-        me: User
-    }
+  # Your schema will go here
+  type Query {
+  launches: [Launch]!
+  launch(id: ID!): Launch
+  me: User
+}
+
+    # type LaunchConnection { # add this below the Query type as an additional type.
+    #     cursor: String!
+    #     hasMore: Boolean!
+    #     launches: [Launch]!
+    # }
+
     type Mutation {
         bookTrips(launchIds: [ID]!): TripUpdateResponse!
         cancelTrip(launchId: ID!): TripUpdateResponse!
@@ -16,6 +24,7 @@ const typeDefs = gql`
         message: String
         launches: [Launch]
     }
+    
     type Launch {
         id: ID!
         site: String
