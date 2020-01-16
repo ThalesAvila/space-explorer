@@ -21,3 +21,16 @@ query GetLaunchById($id: ID!) {
 }
 Query variables: { "id": 60 }
 ```
+
+```
+query GetLaunches {
+  launches(pageSize: 10) {
+    launches {
+      id
+      mission {
+        name
+      }
+    }
+  }
+}
+```
