@@ -34,3 +34,28 @@ query GetLaunches {
   }
 }
 ```
+
+```
+mutation LoginUser {
+  login(email: "daisy@apollographql.com")
+}
+```
+
+```
+mutation BookTrips {
+  bookTrips(launchIds: [67, 68, 69]) {
+    success
+    message
+    launches {
+      id
+    }
+  }
+}
+{
+  "authorization": "ZGFpc3lAYXBvbGxvZ3JhcGhxbC5jb20="
+}
+```
+
+```
+apollo schema:publish --endpoint=http://localhost:4000 --key="service:<my-key>"
+```
