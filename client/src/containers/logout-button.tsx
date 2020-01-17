@@ -23,5 +23,6 @@ export default function LogoutButton() {
 const StyledButton = styled("button")(menuItemClassName, {
   background: "none",
   border: "none",
-  padding: 0
+  padding: 0,
+  cursor: "pointer"
 });
